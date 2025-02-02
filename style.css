@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+	font-family: "Roboto", sans-serif;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+a {
+	font-weight: bold;
+	font-size: x-large;
+}
+
+.calculator,
+.calculator__display {
+	border-radius: 0.75rem;
+}
+
+.calculator {
+	display: flex;
+	flex-direction: column;
+	justify-self: center;
+	align-items: center;
+	background-color: rgb(175, 175, 175);
+	width: 25rem;
+	height: 31.25rem;
+}
+
+.calculator__display {
+	margin-top: 1rem;
+	background-color: rgb(255, 255, 255);
+	padding: 1rem;
+	width: 90%;
+	height: 23%;
+	text-align: right;
+}
+
+.calculator__display--result {
+	color: rgba(0, 0, 0, 0.8);
+}
+
+.calculator__display--answer {
+	font-size: 3rem;
+	font-weight: 800;
+}
+
+.calculator__display--result::after {
+	display: block;
+	margin-top: 0.4rem;
+	background-color: rgba(0, 0, 0, 0.288);
+	width: 100%;
+	height: 0.0625rem;
+	content: " ";
+}
+
+.calculator__keys {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-gap: 0.625rem;
+	width: 90%;
+	height: 80%;
+	margin-block: 10px;
+	border-radius: 1rem;
+	font-weight: 800;
+	font-size: 1.5rem;
+
+	& * {
+		cursor: pointer;
+		border: none;
+		border-radius: 1.125rem;
+		transition: all 0.1s ease;
+
+		&:hover {
+			background-color: rgba(207, 207, 207, 0.8);
+		}
+		&:active {
+			transform: translateY(1px);
+			background-color: rgba(231, 231, 231, 0.9);
+		}
+	}
+}
+
+.calculator__keys--equal {
+	grid-row: span 2;
+
+	background-color: rgba(0, 110, 255, 0.8);
+	&:hover {
+		background-color: rgba(0, 110, 255, 0.9);
+	}
+	&:active {
+		background-color: rgb(0, 110, 255);
+	}
+}
+
+.calculator__keys--clear {
+	background-color: rgba(243, 48, 87, 0.8);
+	&:hover {
+		background-color: rgba(243, 48, 87, 0.9);
+	}
+	&:active {
+		background-color: rgb(243, 48, 87);
+	}
+}
+
+.calculator__keys--operator {
+	background-color: rgba(133, 133, 133, 0.8);
+	&:hover {
+		background-color: rgba(133, 133, 133, 0.95);
+	}
+	&:active {
+		background-color: rgb(133, 133, 133);
+	}
+}
+
+.credits {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	font-weight: bold;
+	font-size: 1.5rem;
+	text-align: center;
+}
